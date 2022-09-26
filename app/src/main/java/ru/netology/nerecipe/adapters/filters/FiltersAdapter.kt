@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.netology.nerecipe.databinding.FilterBinding
 import ru.netology.nerecipe.dto.Categories
 
-
 class FiltersAdapter(
 
     private val interactionListener: FilterInteractionListener,
@@ -28,7 +27,6 @@ class FiltersAdapter(
     override fun onBindViewHolder(holder: FilterViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
-
 
     class FilterViewHolder(
         private val binding: FilterBinding,

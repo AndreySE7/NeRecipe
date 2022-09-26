@@ -67,7 +67,6 @@ class RecipeViewModel(application: Application) :
             id = 0,
             title = "",
             recipeImgPath = "",
-            time = 0,
             ingredients = mutableListOf(),
             steps = mutableMapOf(),
             tags = mutableSetOf()
@@ -83,7 +82,7 @@ class RecipeViewModel(application: Application) :
         val recipes = if (!listOfFilters.value.isNullOrEmpty()) {
             filteredRecipes.value?.filter { recipe ->
                 recipe.tags.any { category ->
-                    category in listOfFilters.value?.toList() ?: mutableListOf()
+                    category in (listOfFilters.value?.toList() ?: mutableListOf())
                 }
             }
         } else {

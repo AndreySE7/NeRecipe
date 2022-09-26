@@ -31,7 +31,6 @@ class StepsAdapter(
         holder.bind(recipe, getItem(position))
     }
 
-
     class StepViewHolder(
         private val binding: StepBinding,
         private val stepsFragment: String,
@@ -84,7 +83,5 @@ class StepsAdapter(
         override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
             return newItem == oldItem
         }
-
     }
-
 }

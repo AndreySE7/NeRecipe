@@ -23,7 +23,6 @@ interface RecipeDao {
         "UPDATE recipes SET " +
                 "title = :title, " +
                 "recipeImgPath = :recipeImgPath, " +
-                "time = :time, " +
                 "ingredients = :ingredients, " +
                 "steps = :steps, " +
                 "tags = :tags  " +
@@ -33,7 +32,6 @@ interface RecipeDao {
         id: Long,
         title: String,
         recipeImgPath: String,
-        time: Int,
         ingredients: MutableList<String>,
         steps: MutableMap<String, String>,
         tags: MutableSet<Categories>

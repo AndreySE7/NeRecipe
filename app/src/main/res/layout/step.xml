@@ -43,7 +43,7 @@
         app:layout_constraintStart_toStartOf="@id/stepWordTextView"
         app:layout_constraintTop_toBottomOf="@id/stepWordTextView"
         app:layout_constraintVertical_chainStyle="packed"
-        tools:text="Странный шаг, в котором нужно сварить селедку с клубникой" />
+        tools:text="Описание шага" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/deleteStepMaterialButton"
@@ -51,20 +51,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/delete_step_text_description"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="@id/stepNumberTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/stepNumberTextView" />
+        app:layout_constraintTop_toTopOf="@id/stepNumberTextView"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/stepImageView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
         android:background="@android:color/transparent"
         android:contentDescription="@string/step_image_description"
         android:maxHeight="@dimen/max_recipe_image_height"
         android:minHeight="@dimen/min_recipe_image_height"
-        android:scaleType="centerCrop"
         android:visibility="visible"
         app:layout_constraintTop_toBottomOf="@id/stepTextView"
         app:layout_constraintStart_toStartOf="@id/stepWordTextView"

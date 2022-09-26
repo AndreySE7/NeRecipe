@@ -115,19 +115,15 @@ class RecipesAdapter(
                 if (
                     item.title
                         .lowercase(Locale.getDefault())
-                        .contains(
-                            query.toString().lowercase(Locale.getDefault())
-                        )
+                        .contains(query.toString().lowercase(Locale.getDefault()))
                 ) {
                     filteredList.add(item)
                 }
             }
         }
         submitList(filteredList)
-
         return filteredList.isNullOrEmpty()
     }
-
 }
 
 private fun setTags(
@@ -145,5 +141,3 @@ private fun setTags(
         chipGroup.addView(chip)
     }
 }
-
-

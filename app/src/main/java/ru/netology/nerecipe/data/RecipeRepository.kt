@@ -16,5 +16,4 @@ interface RecipeRepository {
     fun delete(recipeId: Long)
 
     fun fave(recipeId: Long)
-
 }

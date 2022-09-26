@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/common_spacing"
         android:layout_marginBottom="?android:attr/actionBarSize"
-        android:backgroundTint="@color/amber_500"
+        android:backgroundTint="@color/black"
         android:contentDescription="@string/add_recipe_fb_recipes_feed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,13 +32,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/placeholder_spacing"
-        android:src="@drawable/placeholder_not_found"
+        android:src="@drawable/content_null"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-

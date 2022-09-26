@@ -19,6 +19,5 @@ class SetConverter {
         val gson = Gson()
         val type = object : TypeToken<Set<Categories>>() {}.type
         return gson.fromJson(value, type)
-
     }
 }

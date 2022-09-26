@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="vertical"
     tools:context="ui.NewRecipeFragment">
 
     <ScrollView
@@ -21,12 +20,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/common_spacing"
-                android:adjustViewBounds="true"
                 android:background="@color/amber_500"
                 android:contentDescription="@string/new_recipe_image_description"
                 android:maxHeight="@dimen/max_recipe_image_height"
                 android:minHeight="@dimen/min_recipe_image_height"
-                android:scaleType="centerCrop"
                 android:visibility="visible"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,18 +49,6 @@
                 app:layout_constraintStart_toStartOf="@id/newRecipeImageView"
                 app:layout_constraintTop_toBottomOf="@id/newRecipeImageView" />
 
-            <EditText
-                android:id="@+id/newRecipeTimeEditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:hint="@string/recipe_time"
-                android:inputType="number"
-                android:padding="@dimen/common_spacing"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="@id/newRecipeImageView"
-                app:layout_constraintStart_toStartOf="@id/newRecipeImageView"
-                app:layout_constraintTop_toBottomOf="@id/newRecipeNameEditText" />
-
             <TextView
                 android:id="@+id/newRecipeCategoriesWordTextView"
                 android:layout_width="0dp"
@@ -75,15 +60,15 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@id/newRecipeImageView"
                 app:layout_constraintStart_toStartOf="@id/newRecipeImageView"
-                app:layout_constraintTop_toBottomOf="@id/newRecipeTimeEditText"
+                app:layout_constraintTop_toBottomOf="@id/newRecipeNameEditText"
                 app:layout_constraintVertical_chainStyle="packed" />
 
             <ImageButton
                 android:id="@+id/addCategoryImageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@android:color/transparent"
                 android:contentDescription="@string/add_category_button_text_description"
+                android:minHeight="48dp"
                 app:layout_constraintStart_toStartOf="@id/newRecipeCategoriesWordTextView"
                 app:layout_constraintTop_toBottomOf="@id/newRecipeCategoriesWordTextView"
                 app:srcCompat="@drawable/ic_add_fb_24dp"

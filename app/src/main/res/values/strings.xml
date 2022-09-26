@@ -9,8 +9,8 @@
     <string name="action_bar_ok_button">Confirm</string>
     <string name="action_bar_cancel_button">Cancel</string>
     <string name="action_bar_options_button">Recipe options</string>
-    <string name="edit_recipe_options_menu">Edit recipe</string>
-    <string name="delete_recipe_options_menu">Delete recipe</string>
+    <string name="edit_recipe_options_menu">Edit</string>
+    <string name="delete_recipe_options_menu">Delete</string>
     <string name="step_word">Step\u0020</string>
     <string name="step_number_text_description">Step number</string>
     <string name="step_text_description">Step text</string>

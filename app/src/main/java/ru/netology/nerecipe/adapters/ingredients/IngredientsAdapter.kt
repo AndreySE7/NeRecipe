@@ -12,7 +12,6 @@ import ru.netology.nerecipe.ui.EditRecipeFragment
 import ru.netology.nerecipe.ui.NewRecipeFragment
 import ru.netology.nerecipe.ui.RecipeFragment
 
-
 class IngredientsAdapter(
 
     private val recipe: Recipe,
@@ -30,7 +29,6 @@ class IngredientsAdapter(
     override fun onBindViewHolder(holder: IngredientViewHolder, position: Int) {
         holder.bind(getItem(position), recipe)
     }
-
 
     class IngredientViewHolder(
         private val binding: IngredientBinding,
@@ -75,5 +73,4 @@ class IngredientsAdapter(
             return newItem == oldItem
         }
     }
-
 }

@@ -10,7 +10,6 @@ import ru.netology.nerecipe.db.converters.MapConverter
 import ru.netology.nerecipe.db.converters.SetConverter
 import ru.netology.nerecipe.db.entities.RecipeEntity
 
-
 @Database(
     entities = [RecipeEntity::class],
     version = 1,

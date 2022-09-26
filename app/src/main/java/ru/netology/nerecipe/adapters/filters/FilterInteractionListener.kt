@@ -10,5 +10,4 @@ interface FilterInteractionListener {
     fun onUncheckClicked(category: Categories)
 
     val filterCheckboxUpdate:MutableLiveData<Boolean>
-
 }

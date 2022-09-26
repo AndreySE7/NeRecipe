@@ -17,8 +17,8 @@ import ru.netology.nerecipe.dto.Categories
 import ru.netology.nerecipe.dto.Recipe
 import ru.netology.nerecipe.viewModel.RecipeViewModel
 
-
 class RecipeFragment : Fragment() {
+
     private val args by navArgs<RecipeFragmentArgs>()
 
     private val viewModel by activityViewModels<RecipeViewModel>()
@@ -26,11 +26,13 @@ class RecipeFragment : Fragment() {
     private lateinit var recipe: Recipe
 
     // region Menu
+    @Deprecated("Deprecated in Java")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.recipe_options_menu, menu)
 
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.editRecipeOption -> {
@@ -91,7 +93,6 @@ class RecipeFragment : Fragment() {
     private fun FragmentRecipeBinding.render(recipe: Recipe) {
         recipeNameTextView.text = recipe.title
         recipeImageView.setImageURI(Uri.parse(recipe.recipeImgPath))
-        recipeTimeTextView.text = recipe.time.recipeFormat()
 
         faveRecipeMaterialButton.isChecked = recipe.isFave
 
@@ -102,38 +103,6 @@ class RecipeFragment : Fragment() {
         val stepsAdapter = StepsAdapter(recipe, CALLER_RECIPE, viewModel)
         recipeStepsList.adapter = stepsAdapter
         stepsAdapter.submitList(recipe.steps.keys.toList())
-    }
-
-    private fun Int.recipeFormat(): String {
-        val minutes = this
-        val hours = this / 60
-        val hoursMinutes = this % 60
-
-        if (minutes <= 0) {
-            return resources.getString(R.string.time_format_instantly)
-        }
-
-        val hoursText = when {
-            hours == 0 -> ""
-            hours == 1 || hours % 20 == 1 -> "$hours " + resources.getString(R.string.time_format_hour)
-            hours == 2 || hours % 20 == 2 ||
-                    hours == 3 || hours % 20 == 3 ||
-                    hours == 4 || hours % 20 == 4 -> "$hours " + resources.getString(R.string.time_format_hour_a)
-            else -> "$hours" + R.string.time_format_hours.toString()
-        }
-        val minutesText = when {
-            hoursMinutes == 0 -> ""
-            hoursMinutes in 11..20 -> "$hoursMinutes " + resources.getString(R.string.time_format_minutes)
-            hoursMinutes == 1 || hoursMinutes % 10 == 1 -> "$hoursMinutes " + resources.getString(R.string.time_format_minute)
-            hoursMinutes == 2 || hoursMinutes % 10 == 2 ||
-                    hoursMinutes == 3 || hoursMinutes % 10 == 3 ||
-                    hoursMinutes == 4 || hoursMinutes % 10 == 4 -> "$hoursMinutes " + resources.getString(
-                R.string.time_format_minute_a
-            )
-            else -> "$hoursMinutes " + resources.getString(R.string.time_format_minutes)
-        }
-
-        return "$hoursText $minutesText"
     }
 
     private fun setTag(
@@ -151,7 +120,6 @@ class RecipeFragment : Fragment() {
     }
 
     companion object {
-        const val CALLER_RECIPE = "Caller: recipe"
+        const val CALLER_RECIPE = "CALLER_RECIPE"
     }
 }
-

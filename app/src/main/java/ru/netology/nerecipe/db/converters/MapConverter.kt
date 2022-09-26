@@ -18,6 +18,5 @@ class MapConverter {
         val gson = Gson()
         val type = object : TypeToken<Map<String, String>>() {}.type
         return gson.fromJson(value, type)
-
     }
 }

@@ -25,8 +25,6 @@ import ru.netology.nerecipe.viewModel.RecipeViewModel
 import ru.netology.nerecipe.utils.hideKeyboard
 
 class EditRecipeFragment : Fragment() {
-    private val Fragment.packageManager
-        get() = activity?.packageManager
 
     private val viewModel by activityViewModels<RecipeViewModel>()
 
@@ -70,12 +68,6 @@ class EditRecipeFragment : Fragment() {
 
                 currentEditingRecipe.observe(viewLifecycleOwner) { recipe ->
                     render(recipe)
-                }
-
-                // Title and Time
-                editRecipeNameEditText.setText(currentEditingRecipe.value?.title)
-                if (currentEditingRecipe.value?.time != null) {
-                    editRecipeTimeEditText.setText(currentEditingRecipe.value!!.time.toString())
                 }
 
                 // region Categories
@@ -126,7 +118,6 @@ class EditRecipeFragment : Fragment() {
                         currentEditingRecipe.value?.copy(ingredients = ingredients)
                 }
                 // endregion Ingredients
-
 
                 // region RecipeImage
                 var recipeImgPath: String
@@ -185,13 +176,11 @@ class EditRecipeFragment : Fragment() {
                 editRecipeSaveButton.setOnClickListener {
                     if (
                         !editRecipeNameEditText.text.isNullOrBlank() &&
-                        !editRecipeTimeEditText.text.isNullOrBlank() &&
                         ingredients.isNotEmpty() &&
                         steps.isNotEmpty()
                     ) {
                         currentEditingRecipe.value = currentEditingRecipe.value?.copy(
                             title = editRecipeNameEditText.text.toString(),
-                            time = editRecipeTimeEditText.text.toString().toInt()
                         )
                         currentEditingRecipe.value?.let { recipe ->
                             viewModel.onEditRecipeSaveButtonClicked(
@@ -203,10 +192,6 @@ class EditRecipeFragment : Fragment() {
                         editRecipeNameEditText.requestFocus()
                         editRecipeNameEditText.error =
                             resources.getString(R.string.error_empty_name)
-                    } else if (editRecipeTimeEditText.text.isNullOrBlank()) {
-                        editRecipeTimeEditText.requestFocus()
-                        editRecipeTimeEditText.error =
-                            resources.getString(R.string.error_empty_time)
                     } else if (ingredients.isEmpty()) {
                         editRecipeIngredientsEditText.requestFocus()
                         editRecipeIngredientsEditText.error =
@@ -221,7 +206,6 @@ class EditRecipeFragment : Fragment() {
 
         }.root
     }
-
 
     private fun FragmentRecipeEditBinding.render(recipe: Recipe) {
 
@@ -239,7 +223,7 @@ class EditRecipeFragment : Fragment() {
     }
 
     companion object {
-        const val CALLER_EDIT_RECIPE = "Caller: editRecipe"
+        const val CALLER_EDIT_RECIPE = "CALLER_EDIT_RECIPE"
     }
 }
 

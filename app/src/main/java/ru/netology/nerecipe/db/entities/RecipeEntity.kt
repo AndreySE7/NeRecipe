@@ -17,9 +17,6 @@ class RecipeEntity(
     @ColumnInfo(name = "recipeImgPath")
     val recipeImgPath: String,
 
-    @ColumnInfo(name = "time")
-    val time: Int,
-
     @ColumnInfo(name = "ingredients")
     val ingredients: MutableList<String>,
 
@@ -31,5 +28,4 @@ class RecipeEntity(
 
     @ColumnInfo(name = "isFave")
     val isFave: Boolean = false
-) {
-}
+)

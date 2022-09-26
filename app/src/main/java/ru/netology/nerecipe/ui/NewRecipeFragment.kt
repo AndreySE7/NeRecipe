@@ -25,9 +25,6 @@ import ru.netology.nerecipe.utils.hideKeyboard
 
 class NewRecipeFragment : Fragment() {
 
-    private val Fragment.packageManager
-        get() = activity?.packageManager
-
     private val viewModel by activityViewModels<RecipeViewModel>()
 
     // region ResultLaunchers
@@ -56,7 +53,6 @@ class NewRecipeFragment : Fragment() {
         }
     // endregion ResultLaunchers
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -70,7 +66,6 @@ class NewRecipeFragment : Fragment() {
                         id = 0,
                         title = "",
                         recipeImgPath = "",
-                        time = 0,
                         ingredients = mutableListOf(),
                         steps = mutableMapOf(),
                         tags = mutableSetOf()
@@ -192,13 +187,11 @@ class NewRecipeFragment : Fragment() {
                     }
                     if (
                         !newRecipeNameEditText.text.isNullOrBlank() &&
-                        !newRecipeTimeEditText.text.isNullOrBlank() &&
                         ingredients.isNotEmpty() &&
                         steps.isNotEmpty()
                     ) {
                         currentNewRecipe.value = currentNewRecipe.value?.copy(
-                            title = newRecipeNameEditText.text.toString(),
-                            time = newRecipeTimeEditText.text.toString().toInt()
+                            title = newRecipeNameEditText.text.toString()
                         )
                         currentNewRecipe.value?.let { recipe ->
                             viewModel.onCreateRecipeSaveButtonClicked(
@@ -210,10 +203,6 @@ class NewRecipeFragment : Fragment() {
                         newRecipeNameEditText.requestFocus()
                         newRecipeNameEditText.error =
                             resources.getString(R.string.error_empty_name)
-                    } else if (newRecipeTimeEditText.text.isNullOrBlank()) {
-                        newRecipeTimeEditText.requestFocus()
-                        newRecipeTimeEditText.error =
-                            resources.getString(R.string.error_empty_time)
                     } else if (ingredients.isEmpty()) {
                         newRecipeIngredientsEditText.requestFocus()
                         newRecipeIngredientsEditText.error =
@@ -248,7 +237,7 @@ class NewRecipeFragment : Fragment() {
     companion object {
         private const val DEFAULT_IMAGE_PATH =
             "android.resource://ru.netology.nerecipe/drawable/ic_launcher_foreground"
-        const val CALLER_NEW_RECIPE = "Caller: newRecipe"
+        const val CALLER_NEW_RECIPE = "CALLER_NEW_RECIPE"
     }
 }
 
@@ -274,7 +263,3 @@ private fun setTags(
         chipGroup.addView(chip)
     }
 }
-
-
-
-

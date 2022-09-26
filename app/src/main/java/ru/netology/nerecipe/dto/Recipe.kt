@@ -9,14 +9,11 @@ data class Recipe(
     val id: Long,
     val title: String,
     val recipeImgPath: String,
-    val time: Int,
     val ingredients: MutableList<String>,
     val steps: MutableMap<String, String>,
     val tags: MutableSet<Categories>,
     val isFave: Boolean = false
-) {
-}
-
+)
 
 enum class Categories(val categoryName: String) {
     EUROPEAN(MyApp.appContext.getString(R.string.category_European)),

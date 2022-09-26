@@ -14,13 +14,9 @@ import ru.netology.nerecipe.viewModel.RecipeViewModel
 
 class RecipesFeedFragment : Fragment() {
 
-    private val Fragment.packageManager
-        get() = activity?.packageManager
-
     private val viewModel by activityViewModels<RecipeViewModel>()
 
     private val openSearch = MutableLiveData(false)
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,13 +42,14 @@ class RecipesFeedFragment : Fragment() {
                 RecipesFeedFragmentDirections.toFaveRecipesFeedFragment()
             findNavController().navigate(direction)
         }
-
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.main_menu, menu)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.menu_search_button -> {
@@ -61,7 +58,6 @@ class RecipesFeedFragment : Fragment() {
                 }
                 true
             }
-
             R.id.menu_filter_button -> {
                 val direction = RecipesFeedFragmentDirections.toFiltersFragment()
                 findNavController().navigate(direction)
@@ -135,11 +131,6 @@ class RecipesFeedFragment : Fragment() {
                     }
                     )
                 }
-
             }.root
-    }
-
-    companion object {
-        const val CALLER_FEED = "Caller: feed"
     }
 }

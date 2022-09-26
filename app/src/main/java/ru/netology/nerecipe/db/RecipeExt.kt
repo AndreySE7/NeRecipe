@@ -1,6 +1,7 @@
 package ru.netology.nerecipe.db
 
 import ru.netology.nerecipe.db.entities.RecipeEntity
+import ru.netology.nerecipe.dto.Categories
 import ru.netology.nerecipe.dto.Recipe
 
 internal fun RecipeEntity.toRecipe(): Recipe {
@@ -8,7 +9,6 @@ internal fun RecipeEntity.toRecipe(): Recipe {
         id = id,
         title = title,
         recipeImgPath = recipeImgPath,
-        time = time,
         ingredients = ingredients,
         steps = steps,
         tags = tags,
@@ -21,7 +21,6 @@ internal fun Recipe.toRecipeEntity(): RecipeEntity {
         id = id,
         title = title,
         recipeImgPath = recipeImgPath,
-        time = time,
         ingredients = ingredients,
         steps = steps,
         tags = tags,

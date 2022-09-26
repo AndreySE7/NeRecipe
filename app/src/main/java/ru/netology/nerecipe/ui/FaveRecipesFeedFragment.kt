@@ -43,7 +43,6 @@ class FaveRecipesFeedFragment : Fragment() {
         }
     }
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -61,20 +60,13 @@ class FaveRecipesFeedFragment : Fragment() {
 
                 viewModel.data.observe(viewLifecycleOwner) { recipes ->
                     val faveRecipes = recipes.filter { recipe -> recipe.isFave }
-                    if (faveRecipes.isNullOrEmpty()) {
+                    if (faveRecipes.isEmpty()) {
                         binding.faveRecipeFeedPlaceholderNotFound.visibility = View.VISIBLE
                     } else {
                         binding.faveRecipeFeedPlaceholderNotFound.visibility = View.GONE
                     }
-
                     recipeAdapter.submitList(faveRecipes)
                 }
-
             }.root
     }
-
-    companion object {
-        const val CALLER_FEED = "Caller: feed"
-    }
-
 }

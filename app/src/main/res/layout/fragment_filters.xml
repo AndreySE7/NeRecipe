@@ -23,6 +23,7 @@
         style="@style/Widget.AppTheme.DeleteStepButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:minHeight="48dp"
         android:paddingStart="@dimen/common_spacing"
         android:paddingEnd="@dimen/common_spacing"
         app:layout_constraintStart_toStartOf="parent"

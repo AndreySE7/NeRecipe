@@ -14,9 +14,6 @@ import ru.netology.nerecipe.viewModel.RecipeViewModel
 
 class FiltersFragment : Fragment() {
 
-    private val Fragment.packageManager
-        get() = activity?.packageManager
-
     private val viewModel by activityViewModels<RecipeViewModel>()
 
     private lateinit var onBackPressedCallback: OnBackPressedCallback
@@ -87,6 +84,6 @@ class FiltersFragment : Fragment() {
     }
 
     companion object {
-        const val SHARED_PREFS_KEY = "ru.netology.nerecipe.PREFERENCE"
+        const val SHARED_PREFS_KEY = "SHARED_PREFS_KEY"
     }
 }

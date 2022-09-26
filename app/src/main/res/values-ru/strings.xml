@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">НеРецепты</string>
+    <string name="app_name">NeRecipe</string>
     <string name="recipe_card_image_text_description">Картинка рецепта</string>
     <string name="options_text_description">Опции карточки рецепта</string>
     <string name="fave_button_recipe_card_description">Избранный рецепт</string>
@@ -10,8 +10,8 @@
     <string name="action_bar_ok_button">Подтвердить</string>
     <string name="action_bar_cancel_button">Отменить</string>
     <string name="action_bar_options_button">Опции рецепта</string>
-    <string name="edit_recipe_options_menu">Редактировать рецепт</string>
-    <string name="delete_recipe_options_menu">Удалить рецепт</string>
+    <string name="edit_recipe_options_menu">Редактировать</string>
+    <string name="delete_recipe_options_menu">Удалить</string>
     <string name="step_word">Шаг\u0020</string>
     <string name="step_number_text_description">Номер шага</string>
     <string name="step_text_description">Текст шага</string>
@@ -52,7 +52,7 @@
     <string name="time_format_instantly">Моментально</string>
     <string name="recipe_add_recipe_image">Добавить фото рецепта</string>
     <string name="action_bar_all_recipes_button">Все</string>
-    <string name="action_bar_favorite_recipes_button">Избранные</string>
+    <string name="action_bar_favorite_recipes_button">Избранное</string>
     <string name="reset_filters_button">Сбросить все</string>
     <string name="apply_filters_button">Применить выбранные</string>
     <string name="category_filter">Фильтровать кагерогии:</string>

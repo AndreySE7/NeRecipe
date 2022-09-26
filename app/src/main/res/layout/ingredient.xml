@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
-        tools:text="300 г селедки" />
+        tools:text="Перечисление ингридиентов" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/deleteIngredientMaterialButton"
@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/common_spacing"
         android:contentDescription="@string/delete_ingredient_text_description"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="@id/ingredientTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/ingredientTextView" />

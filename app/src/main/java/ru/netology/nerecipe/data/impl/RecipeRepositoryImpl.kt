@@ -34,7 +34,6 @@ class RecipeRepositoryImpl(
             id = recipe.id,
             title=recipe.title,
             recipeImgPath = recipe.recipeImgPath,
-            time= recipe.time,
             ingredients = recipe.ingredients,
             steps = recipe.steps,
             tags = recipe.tags
